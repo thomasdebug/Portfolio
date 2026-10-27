@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project case study — YOUR NAME</title><link rel="stylesheet" href="style.css">
+  <style>
+    .case-hero{padding:70px 0 45px}.case-hero h1{font-size:clamp(42px,6vw,72px)}.case-kicker{font:12px 'DM Mono',monospace;letter-spacing:.12em}.case-cover{width:100%;height:clamp(200px,42vw,460px);object-fit:cover;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink)}.case-layout{display:grid;grid-template-columns:1fr 280px;gap:55px;padding:55px 0 100px}.case-content h2{font-size:30px;margin:40px 0 15px}.case-content p,.case-content li{color:#51463c}.case-aside{background:var(--paper);border:2px solid var(--ink);padding:22px;height:max-content;box-shadow:5px 5px 0 var(--red)}.case-aside h3{font-size:17px}.case-aside p{font-size:14px}.code-sample{background:#201d1b;color:#fff4e8;padding:20px;overflow:auto;font:13px/1.65 'DM Mono',monospace;white-space:pre}.case-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}@media(max-width:700px){.case-layout{grid-template-columns:1fr;gap:25px}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><a class="wordmark" href="index.html"><span class="wordmark-mark">✦</span><span>YOUR NAME <small>GAME DEVELOPER</small></span></a><nav class="main-nav"><a href="index.html#projects">← All projects</a><a href="index.html#about">About me</a><a href="index.html#contact">Contact</a></nav></header>
+  <main class="section-wrap">
+    <div class="case-hero"><p class="case-kicker">PROJECT CASE STUDY / 01</p><h1>Projectnaam<span class="accent-text">.</span></h1><p class="hero-intro">Write a short summary: what is the project, what was the goal, and which feature did you build?</p><div class="tag-list"><span>Unity</span><span>C#</span><span>Gameplay programming</span></div></div>
+    <img class="case-cover" src="assets/preview-placeholder.svg" alt="Large project screenshot">
+    <div class="case-layout">
+      <article class="case-content">
+        <h2>The project</h2><p>Explain the game and the assignment. Describe the intended audience, the core gameplay loop, and the intended result.</p>
+        <h2>My contribution</h2><p>Describe exactly which parts you made yourself, such as target selection, damage handling, UI integration, or enemy turns. Be clear about teamwork and your own contribution.</p>
+        <h2>Mechanics & features</h2><ul><li><strong>Feature 1:</strong> explain what the player can do and how the system works.</li><li><strong>Feature 2:</strong> describe a technical problem and your solution.</li><li><strong>Feature 3:</strong> describe how you tested and fixed bugs.</li></ul>
+        <h2>Code snippet</h2><p>Add a small, representative piece of your own code. Explain why you chose this approach and link to the full code on GitHub.</p>
+        <pre class="code-sample"><code>// Voorbeeld: vervang dit door eigen code
+public void TakeDamage(int damage)
+{
+    currentHealth -= damage;
+    currentHealth = Mathf.Max(currentHealth, 0);
+}</code></pre>
+        <h2>Process & reflection</h2><p>What went well? What was difficult? Which feedback did you apply? What would you do differently if you built this system again?</p>
+        <h2>Media</h2><p>Add screenshots, a GIF, or a short showreel. Ideally show both the final result and the mechanic in action.</p>
+        <div class="case-links"><a class="button button-dark" href="https://github.com/jouwnaam/jouw-repo" target="_blank" rel="noopener">View code on GitHub ↗</a><a class="button" href="#" target="_blank" rel="noopener">Play the game ↗</a></div>
+      </article>
+      <aside class="case-aside"><h3>Project details</h3><p><strong>Role</strong><br>Gameplay programmer</p><p><strong>Tools</strong><br>Unity · C# · Git</p><p><strong>Periode</strong><br>Add dates</p><p><strong>Team</strong><br>Solo / team size</p><p><strong>Links</strong><br><a href="https://github.com/jouwnaam/jouw-repo">GitHub repository</a></p><p><strong>Status</strong><br>Prototype / completed</p></aside>
+    </div>
+  </main>
+  <footer class="site-footer"><a class="wordmark" href="index.html">✦ YOUR NAME</a><span>Designed with curiosity · Built for games</span><a href="index.html#projects">All projects ↗</a></footer>
+</body>
+</html>
