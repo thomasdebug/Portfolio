@@ -10,25 +10,68 @@
 <body>
   <header class="site-header"><a class="wordmark" href="index.html"><span class="wordmark-mark">✦</span><span>Thomas Born <small>GAME DEVELOPER</small></span></a><nav class="main-nav"><a href="index.html#projects">← All projects</a><a href="index.html#about">About me</a><a href="index.html#contact">Contact</a></nav></header>
   <main class="section-wrap">
-    <div class="case-hero"><p class="case-kicker">SOLO PROJECT / 01</p><h1>Sacrifical Heart<span class="accent-text">.</span></h1><p class="hero-intro">Write a short summary: what is the project, what was the goal, and which feature did you build?</p><div class="tag-list"><span>Unity</span><span>C#</span><span>Gameplay programming</span></div></div>
-    <img class="case-cover" src="assets/preview-placeholder.svg" alt="Large project screenshot">
+    <div class="case-hero"><p class="case-kicker">SOLO PROJECT / 01</p><h1>Sacrifical Heart<span class="accent-text">.</span></h1><p class="hero-intro">This is a card game where you need to defeat the enemy in the room with hp as a resource.</p><div class="tag-list"><span>Unity</span><span>C#</span><span>Gameplay programming</span></div></div>
+    <img class="case-cover" src="IMG/Screenshot 2026-10-28 164522.png" alt="Large project screenshot">
     <div class="case-layout">
       <article class="case-content">
-        <h2>The project</h2><p>Explain the game and the assignment. Describe the intended audience, the core gameplay loop, and the intended result.</p>
-        <h2>My contribution</h2><p>Describe exactly which parts you made yourself, such as target selection, damage handling, UI integration, or enemy turns. Be clear about teamwork and your own contribution.</p>
-        <h2>Mechanics & features</h2><ul><li><strong>Feature 1:</strong> explain what the player can do and how the system works.</li><li><strong>Feature 2:</strong> describe a technical problem and your solution.</li><li><strong>Feature 3:</strong> describe how you tested and fixed bugs.</li></ul>
-        <h2>Code snippet</h2><p>Add a small, representative piece of your own code. Explain why you chose this approach and link to the full code on GitHub.</p>
-        <pre class="code-sample"><code>// Voorbeeld: vervang dit door eigen code
-public void TakeDamage(int damage)
-{
-    currentHealth -= damage;
-    currentHealth = Mathf.Max(currentHealth, 0);
-}</code></pre>
-        <h2>Process & reflection</h2><p>What went well? What was difficult? Which feedback did you apply? What would you do differently if you built this system again?</p>
-        <h2>Media</h2><p>Add screenshots, a GIF, or a short showreel. Ideally show both the final result and the mechanic in action.</p>
-        <div class="case-links"><a class="button button-dark" href="https://github.com/jouwnaam/jouw-repo" target="_blank" rel="noopener">View code on GitHub ↗</a><a class="button" href="#" target="_blank" rel="noopener">Play the game ↗</a></div>
+        <h2>The project</h2><p>you need to defeat enemies with the cards you have while not taking to much damage.</p>
+        <h2>Mechanics & features</h2><ul><li><strong>Feature 1:</strong> you can use cards on enemies and the enemies take damage with how much damage is on the card.</li><li><strong>Feature 2:</strong>You can draw and discard your hand each turn</li></ul>
+        <h2>Code snippet</h2>
+        <pre class="code-sample"><code>
+    void UpdateArc(Vector3 start, Vector3 mid, Vector3 end)
+    {
+        int numDots = Mathf.CeilToInt(Vector3.Distance(start, end) / (spacing * spacingScale));
+
+        for (int i = 0; i < numDots && i < dotPool.Count; i++)
+        {
+            float t = i / (float)numDots;
+            t = Mathf.Clamp(t, 0f, 1f); // Ensure t stays within the range [0, 1]
+
+            Vector3 position = QuadraticBezierPoint(start, mid, end, t);
+
+            if (i != numDots - dotsToSkip)
+            {
+                dotPool[i].transform.position = position;
+                dotPool[i].SetActive(true);
+            }
+            if (i == numDots - (dotsToSkip + 1) && i - dotsToSkip + 1 >= 0)
+            {
+                arrowDirection = dotPool[i].transform.position;
+            }
+
+        }
+
+        // Deactivate unused dots
+        for (int i = numDots - dotsToSkip; i < dotPool.Count; i++)
+        {
+            if (i > 0)
+            {
+                dotPool[i].SetActive(false);
+            }
+        }
+    }</code></pre> <p>i use the QuadraticBezierPoint function to make an arc in the arc voor my game i made it using the dots in the if for the dotsToSkip i made it that way so that there is some spacing between the arrow and the dots because if i dont do that it goes inside the arrow.</p>
+        <h2>Process & reflection</h2><p>I need to focus more on completing than pushing things to the side till the final moments. Next time i am going to fully commit and not just do it</p>
+        <h2>Media</h2><p>here are a few VFX that i made for the combat of the game</p>
+                 <div class="gif-gallery">
+                     <img src="assets/Block impact.gif"
+                          alt="Tower defense gameplay"
+                          loading="lazy">
+
+                     <img src="assets/Block.gif"
+                          alt="Combat system gameplay"
+                          loading="lazy">
+                      
+                      <img src="assets/impact.gif"
+                          alt="Combat system gameplay"
+                          loading="lazy">
+                          
+                      <img src="assets/player impact.gif"
+                          alt="Combat system gameplay"
+                          loading="lazy">    
+                 </div>
+        <div class="case-links"><a class="button button-dark" href="https://github.com/thomasdebug/Sacrifical-Heart" target="_blank" rel="noopener">View code on GitHub ↗</a></div>
       </article>
-      <aside class="case-aside"><h3>Project details</h3><p><strong>Role</strong><br></p>Combat VFX designer<p><strong>Tools</strong><br>Unity · C# · Git</p><p><strong>Periode</strong><br>07/09/2026-?</p><p><strong>Team</strong><br>Solo</p><p><strong>Links</strong><br><a href="https://github.com/jouwnaam/jouw-repo">GitHub repository</a></p><p><strong>Status</strong><br>WORK IN PROGRESS</p></aside>
+      <aside class="case-aside"><h3>Project details</h3><p><strong>Role</strong><br></p>Combat VFX designer<p><strong>Tools</strong><br>Unity · C# · Git</p><p><strong>Periode</strong><br>07/09/2026-?</p><p><strong>Team</strong><br>Solo</p><p><strong>Links</strong><br><a href="https://github.com/thomasdebug/Sacrifical-Heart">GitHub repository</a></p><p><strong>Status</strong><br>WORK IN PROGRESS</p></aside>
     </div>
   </main>
   <footer class="site-footer"><a class="wordmark" href="index.html">✦ Thomas Born</a><span>Designed with curiosity · Built for games</span><a href="index.html#projects">All projects ↗</a></footer>
